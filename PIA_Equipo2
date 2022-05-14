@@ -1,0 +1,904 @@
+SEPARADOR = ("-"*100)
+
+while True:
+    print("")
+    print(SEPARADOR)
+    print("[1].- Registrar datos")
+    print("[2].- Mostrar datos de Redaccion")
+    print("[3].- Presupuesto de Operacion")
+    print("[4].- Presupuesto Financiero")
+    print("[5].- Salir")
+    opcion = input("Ingresa la opcion elegida: ")
+    print(SEPARADOR)
+
+    if opcion=="1":
+        print("Balance General al 31 de Diciembre del 2015")
+        print(SEPARADOR)
+        efectivo_2015=float(input("Ingrese el saldo de Efectivo del año 2015: "))
+        clientes_2015=float(input("Ingrese el saldo de Clientes del año 2015: "))
+        deudoresDiversos_2015=float(input("Ingrese el saldo de Deudores Diversos del año 2015: "))
+        funcionariosyE_2015=float(input("Ingrese el saldo de Funcionarios y Empleados del año 2015: "))
+        inventario_materiales_2015=float(input("Ingrese el saldo de Inventario de materiales del año 2015: "))
+        inv_producto_terminado_2015=float(input("Ingrese el saldo de Inventario del producto terminado del año 2015: "))
+        total_ActivoCirculante_2015 = efectivo_2015  + clientes_2015 + deudoresDiversos_2015 + funcionariosyE_2015 + inventario_materiales_2015 + inv_producto_terminado_2015
+
+        terreno_2015=float(input("Ingrese el saldo de Terreno del año 2015: "))
+        planta_equipo_2015=float(input("Ingrese el saldo de Planta y Equipo del año 2015: "))
+        depreciacionAcu_2015=float(input("Ingrese el saldo de Depreciacion Acumulada del año 2015: "))
+        total_ActivoNoCirculante_2015= terreno_2015 + planta_equipo_2015 + depreciacionAcu_2015
+
+        activoTotal_2015= total_ActivoCirculante_2015 + total_ActivoNoCirculante_2015
+
+        proveedores_2015=float(input("Ingrese el saldo de Proveedores del año 2015: "))
+        documentosxpagar_2015=float(input("Ingrese el saldo de Documentos por pagar del año 2015: "))
+        isr_x_pagar_2015=float(input("Ingrese el saldo de ISR por pagar del año 2015: "))
+        total_pasivo_CP_2015= proveedores_2015 + documentosxpagar_2015 + isr_x_pagar_2015
+
+        prestamos_bancarios_2015=float(input("Ingrese el saldo de Prestamos bancarios del año 2015: "))
+        total_pasivo_LP_2015= prestamos_bancarios_2015
+
+        pasivoTotal_2015= total_pasivo_CP_2015 + total_pasivo_LP_2015
+
+        capitalContribuido_2015=float(input("Ingrese el saldo de Capital Contribuido del año 2015: "))
+        capitalGanado_2015=float(input("Ingrese el saldo de Capital Ganado del año 2015: "))
+        capitalContableTotal_2015= capitalContribuido_2015 + capitalGanado_2015
+
+        suma_PasivoCapital_2015= pasivoTotal_2015 + capitalContableTotal_2015
+
+        print("")
+        print("REQUERIMIENTO DE MATERIALES: ")
+        print(SEPARADOR)
+        materia_primaA_CL= float(input("Ingrese los metros de la Materia Prima A del producto CL: "))
+        materia_primaB_CL= float(input("Ingrese los metros de la Materia Prima B del producto CL: "))
+        materia_primaC_CL= float(input("Ingrese los metros de la Materia Prima C del producto CL: "))
+        horas_mano_obra_CL=float(input("Ingrese las horas de Mano de Obra del producto CL:"))
+        print("")
+
+        materia_primaA_CE= float(input("Ingrese los metros de la Materia Prima A del producto CE: "))
+        materia_primaB_CE= float(input("Ingrese los metros de la Materia Prima B del producto CE: "))
+        materia_primaC_CE= float(input("Ingrese los metros de la Materia Prima C del producto CE: "))
+        horas_mano_obra_CE=float(input("Ingrese las horas de Mano de Obra del producto CE:"))
+        print("")
+
+        materia_primaA_CR= float(input("Ingrese los metros de la Materia Prima A del producto CR: "))
+        materia_primaB_CR= float(input("Ingrese los metros de la Materia Prima B del producto CR: "))
+        materia_primaC_CR= float(input("Ingrese los metros de la Materia Prima C del producto CR: "))
+        horas_mano_obra_CR=float(input("Ingrese las horas de Mano de Obra del producto CR:"))
+        print("")
+
+        costo_mano_obra_1sem = float(input("Ingrese el Costo de Mano de Obra del Primer Semestre: "))
+        costo_mano_obra_2sem = float(input("Ingrese el Costo de Mano de Obra del Segundo Semestre: "))
+        print("")
+
+        print("INFORMACION DE INVENTARIOS: ")
+        print(SEPARADOR)
+        inv_inicial_1semestre_MatprimaA=float(input("Ingrese el Inventario Inicial en el 1er Semestre de la Materia Prima A: "))
+        inv_final_2semestre_MatprimaA=float(input("Ingrese el Inventario Final en el 2do Semestre de la Materia Prima A: "))
+        costo_1semestre_MatprimaA=float(input("Ingrese el Costo en el 1er Semestre de la Materia Prima A: "))
+        costo_2semestre_MatprimaA=float(input("Ingrese el Costo en el 2do Semestre de la Materia Prima A: "))
+        print("")
+
+        inv_inicial_1semestre_MatprimaB=float(input("Ingrese el Inventario Inicial en el 1er Semestre de la Materia Prima B: "))
+        inv_final_2semestre_MatprimaB=float(input("Ingrese el Inventario Final en el 2do Semestre de la Materia Prima B: "))
+        costo_1semestre_MatprimaB=float(input("Ingrese el Costo en el 1er Semestre de la Materia Prima B: "))
+        costo_2semestre_MatprimaB=float(input("Ingrese el Costo en el 2do Semestre de la Materia Prima B: "))
+        print("")
+
+        inv_inicial_1semestre_MatprimaC=float(input("Ingrese el Inventario Inicial en el 1er Semestre de la Materia Prima C: "))
+        inv_final_2semestre_MatprimaC=float(input("Ingrese el Inventario Final en el 2do Semestre de la Materia Prima C: "))
+        costo_1semestre_MatprimaC=float(input("Ingrese el Costo en el 1er Semestre de la Materia Prima C: "))
+        costo_2semestre_MatprimaC=float(input("Ingrese el Costo en el 2do Semestre de la Materia Prima C: "))
+        print("")
+
+        inv_inicial_1semestre_productoCL=float(input("Ingrese el Inventario Inicial en el 1er Semestre del Producto CL: "))
+        inv_final_2semestre_productoCL=float(input("Ingrese el Inventario Final en el 2do Semestre del Producto CL: "))
+        print("")
+
+        inv_inicial_1semestre_productoCE=float(input("Ingrese el Inventario Inicial en el 1er Semestre del Producto CE: "))
+        inv_final_2semestre_productoCE=float(input("Ingrese el Inventario Final en el 2do Semestre del Producto CE: "))
+        print("")
+
+        inv_inicial_1semestre_productoCR=float(input("Ingrese el Inventario Inicial en el 1er Semestre del Producto CR: "))
+        inv_final_2semestre_productoCR=float(input("Ingrese el Inventario Final en el 2do Semestre del Producto CR: "))
+        print("")
+
+        print("PRODUCTOS")
+        print(SEPARADOR)
+        precio_venta_1semestre_CL = float(input("Ingrese el Precio de Venta de Primer Semestre del Producto CL: "))
+        precio_venta_2semestre_CL = float(input("Ingrese el Precio de Venta de Segundo Semestre del Producto CL: "))
+        ventas_planeadas_1semestre_CL = float(input("Ingrese las Ventas Planeadas de Primer Semestre del Producto CL: "))
+        ventas_planeadas_2semestre_CL = float(input("Ingrese las Ventas Planeadas de Segundo Semestre del Producto CL: "))
+        print("")
+
+        precio_venta_1semestre_CE = float(input("Ingrese el Precio de Venta de Primer Semestre del Producto CE: "))
+        precio_venta_2semestre_CE = float(input("Ingrese el Precio de Venta de Segundo Semestre del Producto CE: "))
+        ventas_planeadas_1semestre_CE = float(input("Ingrese las Ventas Planeadas de Primer Semestre del Producto CE: "))
+        ventas_planeadas_2semestre_CE= float(input("Ingrese las Ventas Planeadas de Segundo Semestre del Producto CE: "))
+        print("")
+
+        precio_venta_1semestre_CR = float(input("Ingrese el Precio de Venta de Primer Semestre del Producto CR: "))
+        precio_venta_2semestre_CR = float(input("Ingrese el Precio de Venta de Segundo Semestre del Producto CR: "))
+        ventas_planeadas_1semestre_CR = float(input("Ingrese las Ventas Planeadas de Primer Semestre del Producto CR: "))
+        ventas_planeadas_2semestre_CR = float(input("Ingrese las Ventas Planeadas de Segundo Semestre del Producto CR: "))
+        print("")
+
+        print("GASTOS DE ADMINISTRACION Y VENTAS")
+        print(SEPARADOR)
+        depreciacion_1semestre_GADMIN = float(input("Ingrese la Depreciacion del 1er Semestre: "))
+        depreciacion_2semestre_GADMIN = float(input("Ingrese la Depreciacion del 2do Semestre: "))
+        sueldos_salarios_1sem_GADMIN = float(input("Ingrese los Sueldos y Salarios del 1er Semestre: "))
+        sueldos_salarios_2sem_GADMIN = float(input("Ingrese los Sueldos y Salarios del 2do Semestre: "))
+        varios_1semestre_GADMIN = float(input("Ingrese la cantidad de Varios del 1er Semestre: "))
+        varios_2semestre_GADMIN = float(input("Ingrese la cantidad de Varios del 2do Semestre: "))
+        intereses_prestamo_1sem_GADMIN = float(input("Ingrese los Intereses por Prestamo del 1er Semestre: "))
+        intereses_prestamo_2sem_GADMIN = float(input("Ingrese los Intereses por Prestamo del 2do Semestre: "))
+        print("")
+
+        print("GASTOS DE FABRICACION INDIRECTOS")
+        print(SEPARADOR)
+        depreciacion_1sem_GFI = float(input("Ingrese la Depreciacion del 1er semestre: "))
+        depreciacion_2sem_GFI = float(input("Ingrese la Depreciacion del 2do semestre: "))
+        seguros_1sem_GFI = float(input("Ingrese los Seguros del 1er semestre: "))
+        seguros_2sem_GFI = float(input("Ingrese los Seguros del 2do semestre: "))
+        mantenimiento_1sem_GFI = float(input("Ingrese el Mantenimiento del 1er semestre: "))
+        mantenimiento_2sem_GFI = float(input("Ingrese el Mantenimiento del 2do semestre: "))
+        energeticos_1sem_GFI = float(input("Ingrese los Energeticos del 1er semestre: "))
+        energeticos_2sem_GFI = float(input("Ingrese los Energeticos del 2do semestre: "))
+        varios_1sem_GFI = float(input("Ingrese la cantidad de Varios del 1er semestre: "))
+        varios_2sem_GFI = float(input("Ingrese la cantidad de Varios del 2do semestre: "))
+        print("")
+
+        print("DATOS ADICIONALES")
+        print(SEPARADOR)
+        equipo_nuevo=float(input("Ingrese el valor del Equipo Nuevo: "))
+        ISR = 0.30
+        PTU = 0.10
+        print(f"En 2016 se adquirirá un equipo nuevo valuado en {equipo_nuevo} y no se depreciará durante el ejercicio presupuestado La Tasa de ISR es del 30%")
+        print("La tasa del PTU es del 10%")
+        print("En 2016 se cobrará el 100% el saldo de clientes del 2015 En 2016 se cobrará el 80% de las ventas presupuestadas")
+        print("En 2016 se pagará el 100% del saldo de proveedores del 2015 En 2016 se pagará el 50% de las compras presupuesetadas")
+        print("Se pagará el ISR del 2015.")
+        print("")
+
+        # Variables Utilizadas para el Presupuesto de Ventas
+        importe_venta_2016CL_1sem = ventas_planeadas_1semestre_CL * precio_venta_1semestre_CL
+        importe_venta_2016CL_2sem = ventas_planeadas_2semestre_CL * precio_venta_2semestre_CL
+        importe_ventatotal_2016CL = importe_venta_2016CL_1sem + importe_venta_2016CL_2sem
+
+        importe_venta_2016CE_1sem = ventas_planeadas_1semestre_CE * precio_venta_1semestre_CE
+        importe_venta_2016CE_2sem = ventas_planeadas_2semestre_CE * precio_venta_2semestre_CE
+        importe_ventatotal_2016CE = importe_venta_2016CE_1sem + importe_venta_2016CE_2sem
+
+        importe_venta_2016CR_1sem = ventas_planeadas_1semestre_CR * precio_venta_1semestre_CR
+        importe_venta_2016CR_2sem = ventas_planeadas_2semestre_CR * precio_venta_2semestre_CR
+        importe_ventatotal_2016CR = importe_venta_2016CR_1sem + importe_venta_2016CR_2sem
+
+        total_ventas1Semestre = importe_venta_2016CL_1sem+importe_venta_2016CE_1sem+importe_venta_2016CR_1sem
+        total_ventas2Semestre = importe_venta_2016CL_2sem+importe_venta_2016CE_2sem+importe_venta_2016CR_2sem
+        total_ventas2016 = importe_ventatotal_2016CL+importe_ventatotal_2016CE+importe_ventatotal_2016CR
+
+        #Variables para la Determinacion del Saldo de Clientes y Flujo de Entradas
+        total_clientes_2016=clientes_2015+total_ventas2016
+        cobranza_2016=total_ventas2016*.80
+        total_entradas_2016=clientes_2015+cobranza_2016
+        clientes_2016=total_clientes_2016-total_entradas_2016
+
+        # Variables para el Presupuesto de Produccion
+        total_unidades_1semCL=ventas_planeadas_1semestre_CL+inv_inicial_1semestre_productoCL
+        total_unidades_2semCL=ventas_planeadas_2semestre_CL+inv_final_2semestre_productoCL
+        unidades_vender_2016CL=ventas_planeadas_1semestre_CL+ventas_planeadas_2semestre_CL
+        total_unidades_2016CL=unidades_vender_2016CL+inv_final_2semestre_productoCL
+        unidades_producir_1semCL=total_unidades_1semCL-inv_inicial_1semestre_productoCL
+        unidades_producir_2semCL=total_unidades_2semCL-inv_inicial_1semestre_productoCL
+        unidades_producir_2016CL=total_unidades_2016CL-inv_inicial_1semestre_productoCL
+
+        total_unidades_1semCE=ventas_planeadas_1semestre_CE+inv_inicial_1semestre_productoCE
+        total_unidades_2semCE=ventas_planeadas_2semestre_CE+inv_final_2semestre_productoCE
+        unidades_vender_2016CE=ventas_planeadas_1semestre_CE+ventas_planeadas_2semestre_CE
+        total_unidades_2016CE=unidades_vender_2016CE+inv_final_2semestre_productoCE
+        unidades_producir_1semCE=total_unidades_1semCE-inv_inicial_1semestre_productoCE
+        unidades_producir_2semCE=total_unidades_2semCE-inv_inicial_1semestre_productoCE
+        unidades_producir_2016CE=total_unidades_2016CE-inv_inicial_1semestre_productoCE
+
+        total_unidades_1semCR = ventas_planeadas_1semestre_CR+inv_inicial_1semestre_productoCR
+        total_unidades_2semCR = ventas_planeadas_2semestre_CR+inv_final_2semestre_productoCR
+        unidades_vender_2016CR = ventas_planeadas_1semestre_CR+ventas_planeadas_2semestre_CR
+        total_unidades_2016CR = unidades_vender_2016CR+inv_final_2semestre_productoCR
+        unidades_producir_1semCR = total_unidades_1semCR-inv_inicial_1semestre_productoCR
+        unidades_producir_2semCR = total_unidades_2semCR-inv_inicial_1semestre_productoCR
+        unidades_producir_2016CR = total_unidades_2016CR-inv_inicial_1semestre_productoCR
+
+        # Variables utilizadas en el Presupuesto de Requerimiento de Materiales
+
+        # Producto CL
+        total_materialA_1semCL=unidades_producir_1semCL*materia_primaA_CL
+        total_materialA_2semCL=unidades_producir_2semCL*materia_primaA_CL
+        total_materialA_2016CL=unidades_producir_2016CL*materia_primaA_CL
+
+        total_materialB_1semCL=unidades_producir_1semCL*materia_primaB_CL
+        total_materialB_2semCL=unidades_producir_2semCL*materia_primaB_CL
+        total_materialB_2016CL=unidades_producir_2016CL*materia_primaB_CL
+
+        total_materialC_1semCL=unidades_producir_1semCL*materia_primaC_CL
+        total_materialC_2semCL=unidades_producir_2semCL*materia_primaC_CL
+        total_materialC_2016CL=unidades_producir_2016CL*materia_primaC_CL
+
+        # Producto CE
+        total_materialA_1semCE=unidades_producir_1semCE*materia_primaA_CE
+        total_materialA_2semCE=unidades_producir_2semCE*materia_primaA_CE
+        total_materialA_2016CE=unidades_producir_2016CE*materia_primaA_CE
+
+        total_materialB_1semCE=unidades_producir_1semCE*materia_primaB_CE
+        total_materialB_2semCE=unidades_producir_2semCE*materia_primaB_CE
+        total_materialB_2016CE=unidades_producir_2016CE*materia_primaB_CE
+
+        total_materialC_1semCE=unidades_producir_1semCE*materia_primaC_CE
+        total_materialC_2semCE=unidades_producir_2semCE*materia_primaC_CE
+        total_materialC_2016CE=unidades_producir_2016CE*materia_primaC_CE
+
+        # Producto CR
+        total_materialA_1semCR=unidades_producir_1semCR*materia_primaA_CR
+        total_materialA_2semCR=unidades_producir_2semCR*materia_primaA_CR
+        total_materialA_2016CR=unidades_producir_2016CR*materia_primaA_CR
+
+        total_materialB_1semCR=unidades_producir_1semCR*materia_primaB_CR
+        total_materialB_2semCR=unidades_producir_2semCR*materia_primaB_CR
+        total_materialB_2016CR=unidades_producir_2016CR*materia_primaB_CR
+
+        total_materialC_1semCR=unidades_producir_1semCR*materia_primaC_CR
+        total_materialC_2semCR=unidades_producir_2semCR*materia_primaC_CR
+        total_materialC_2016CR=unidades_producir_2016CR*materia_primaC_CR
+
+        # Total de Requerimientos
+        materialA_TOTAL_1sem = total_materialA_1semCL+total_materialA_1semCE+total_materialA_1semCR
+        materialA_TOTAL_2sem = total_materialA_2semCL+total_materialA_2semCE+total_materialA_2semCR
+        materialA_TOTAL_2016 = total_materialA_2016CL+total_materialA_2016CE+total_materialA_2016CR
+
+        materialB_TOTAL_1sem = total_materialB_1semCL+total_materialB_1semCE+total_materialB_1semCR
+        materialB_TOTAL_2sem = total_materialB_2semCL+total_materialB_2semCE+total_materialB_2semCR
+        materialB_TOTAL_2016 = total_materialB_2016CL+total_materialB_2016CE+total_materialB_2016CR
+
+        materialC_TOTAL_1sem = total_materialC_1semCL+total_materialC_1semCE+total_materialC_1semCR
+        materialC_TOTAL_2sem = total_materialC_2semCL+total_materialC_2semCE+total_materialC_2semCR
+        materialC_TOTAL_2016 = total_materialC_2016CL+total_materialC_2016CE+total_materialC_2016CR
+
+        #Variables para el Presupuesto de Compras de Materiales
+        #Material A
+        totalMaterialesA_1sem = materialA_TOTAL_1sem + inv_inicial_1semestre_MatprimaA
+        totalMaterialesA_2sem = materialA_TOTAL_2sem + inv_final_2semestre_MatprimaA
+        totalMaterialesA_2016 = materialA_TOTAL_2016 + inv_final_2semestre_MatprimaA
+
+        materialComprarA_1sem = totalMaterialesA_1sem-inv_inicial_1semestre_MatprimaA
+        materialComprarA_2sem = totalMaterialesA_2sem-inv_inicial_1semestre_MatprimaA
+        materialComprarA_2016 = totalMaterialesA_2016-inv_inicial_1semestre_MatprimaA
+
+        totalMaterialA_1sem_PESOS = materialComprarA_1sem*costo_1semestre_MatprimaA
+        totalMaterialA_2sem_PESOS = materialComprarA_2sem*costo_2semestre_MatprimaA
+        totalMaterialA_2016_PESOS = totalMaterialA_1sem_PESOS+totalMaterialA_2sem_PESOS
+
+        #Material B
+        totalMaterialesB_1sem = materialB_TOTAL_1sem + inv_inicial_1semestre_MatprimaB
+        totalMaterialesB_2sem = materialB_TOTAL_2sem + inv_final_2semestre_MatprimaB
+        totalMaterialesB_2016 = materialB_TOTAL_2016 + inv_final_2semestre_MatprimaB
+
+        materialComprarB_1sem = totalMaterialesB_1sem-inv_inicial_1semestre_MatprimaB
+        materialComprarB_2sem = totalMaterialesB_2sem-inv_inicial_1semestre_MatprimaB
+        materialComprarB_2016 = totalMaterialesB_2016-inv_inicial_1semestre_MatprimaB
+
+        totalMaterialB_1sem_PESOS = materialComprarB_1sem*costo_1semestre_MatprimaB
+        totalMaterialB_2sem_PESOS = materialComprarB_2sem*costo_2semestre_MatprimaB
+        totalMaterialB_2016_PESOS = totalMaterialB_1sem_PESOS+totalMaterialB_2sem_PESOS
+
+        #Material C
+        totalMaterialesC_1sem = materialC_TOTAL_1sem + inv_inicial_1semestre_MatprimaC
+        totalMaterialesC_2sem = materialC_TOTAL_2sem + inv_final_2semestre_MatprimaC
+        totalMaterialesC_2016 = materialC_TOTAL_2016 + inv_final_2semestre_MatprimaC
+
+        materialComprarC_1sem = totalMaterialesC_1sem - inv_inicial_1semestre_MatprimaC
+        materialComprarC_2sem = totalMaterialesC_2sem - inv_inicial_1semestre_MatprimaC
+        materialComprarC_2016 = totalMaterialesC_2016 - inv_inicial_1semestre_MatprimaC
+
+        totalMaterialC_1sem_PESOS = materialComprarC_1sem * costo_1semestre_MatprimaC
+        totalMaterialC_2sem_PESOS = materialComprarC_2sem * costo_2semestre_MatprimaC
+        totalMaterialC_2016_PESOS = totalMaterialC_1sem_PESOS + totalMaterialC_2sem_PESOS
+
+        #Compras Totales
+        compraTotal_1sem = totalMaterialA_1sem_PESOS + totalMaterialB_1sem_PESOS + totalMaterialC_1sem_PESOS
+        compraTotal_2sem = totalMaterialA_2sem_PESOS + totalMaterialB_2sem_PESOS + totalMaterialC_2sem_PESOS
+        compraTotal_2016 = totalMaterialA_2016_PESOS + totalMaterialB_2016_PESOS + totalMaterialC_2016_PESOS
+
+        #Variables de la Determinacion del Saldo de Proveedores y Flujo de Salidas
+        totalProveedores_2016 = proveedores_2015 + compraTotal_2016
+        porProveedores_2016 = compraTotal_2016 * .50
+        totalSalidas_2016 = proveedores_2015 + porProveedores_2016
+        proveedores_2016 = totalProveedores_2016 - totalSalidas_2016
+
+        # Variables del Presupuesto de Mano de Obra Directa
+        #Producto CL
+        totalHorasRequeridas_1semCL = unidades_producir_1semCL * horas_mano_obra_CL
+        totalHorasRequeridas_2semCL = unidades_producir_2semCL * horas_mano_obra_CL
+        totalHorasRequeridas_2016CL = unidades_producir_2016CL * horas_mano_obra_CL
+
+        importeMOD_1semCL = totalHorasRequeridas_1semCL * costo_mano_obra_1sem
+        importeMOD_2semCL = totalHorasRequeridas_2semCL * costo_mano_obra_2sem
+        importeMOD_2016CL = importeMOD_1semCL + importeMOD_2semCL
+
+        #Producto CE
+        totalHorasRequeridas_1semCE = unidades_producir_1semCE * horas_mano_obra_CE
+        totalHorasRequeridas_2semCE = unidades_producir_2semCE * horas_mano_obra_CE
+        totalHorasRequeridas_2016CE = unidades_producir_2016CE * horas_mano_obra_CE
+
+        importeMOD_1semCE = totalHorasRequeridas_1semCE * costo_mano_obra_1sem
+        importeMOD_2semCE = totalHorasRequeridas_2semCE * costo_mano_obra_2sem
+        importeMOD_2016CE = importeMOD_1semCE + importeMOD_2semCE
+
+        #Producto CR
+        totalHorasRequeridas_1semCR = unidades_producir_1semCR * horas_mano_obra_CR
+        totalHorasRequeridas_2semCR = unidades_producir_2semCR * horas_mano_obra_CR
+        totalHorasRequeridas_2016CR = unidades_producir_2016CR * horas_mano_obra_CR
+
+        importeMOD_1semCR = totalHorasRequeridas_1semCR * costo_mano_obra_1sem
+        importeMOD_2semCR = totalHorasRequeridas_2semCR * costo_mano_obra_2sem
+        importeMOD_2016CR = importeMOD_1semCR + importeMOD_2semCR
+
+        horasRequeridas_todosProductos_1sem = totalHorasRequeridas_1semCL+totalHorasRequeridas_1semCE+totalHorasRequeridas_1semCR
+        horasRequeridas_todosProductos_2sem = totalHorasRequeridas_2semCL+totalHorasRequeridas_2semCE+totalHorasRequeridas_2semCR
+        horasRequeridas_todosProductos_2016 = totalHorasRequeridas_2016CL+totalHorasRequeridas_2016CE+totalHorasRequeridas_2016CR
+
+        totalMOD_1sem = importeMOD_1semCL + importeMOD_1semCE + importeMOD_1semCR
+        totalMOD_2sem = importeMOD_2semCL + importeMOD_2semCE + importeMOD_2semCR
+        totalMOD_2016 = importeMOD_2016CL + importeMOD_2016CE + importeMOD_2016CR
+
+        # Variables del Presupuesto de Gastos Indirectos de Fabricacion
+        depreciacion_2016_GIF = depreciacion_1sem_GFI + depreciacion_2sem_GFI
+        seguros_2016_GIF = seguros_1sem_GFI + seguros_2sem_GFI
+        mantenimiento_2016_GIF = mantenimiento_1sem_GFI + mantenimiento_2sem_GFI
+        energeticos_2016_GIF = energeticos_1sem_GFI + energeticos_2sem_GFI
+        varios_2016_GIF = varios_1sem_GFI + varios_1sem_GFI
+
+        total_GIF_1sem = depreciacion_1sem_GFI + seguros_1sem_GFI + mantenimiento_1sem_GFI + energeticos_1sem_GFI + varios_1sem_GFI
+        total_GIF_2sem = depreciacion_2sem_GFI + seguros_2sem_GFI + mantenimiento_2sem_GFI + energeticos_2sem_GFI + varios_2sem_GFI
+        total_GIF_2016 = depreciacion_2016_GIF + seguros_2016_GIF + mantenimiento_2016_GIF + energeticos_2016_GIF + varios_2016_GIF
+
+        costo_xHora_GIF = total_GIF_2016/horasRequeridas_todosProductos_2016
+
+        # Variables del Presupuesto de Gastos de Operacion
+        comisiones_1sem_GADMIN = total_ventas1Semestre * .01
+        comisiones_2sem_GADMIN = total_ventas2Semestre * .01
+
+        depreciacion_2016_GADMIN = depreciacion_1semestre_GADMIN + depreciacion_2semestre_GADMIN
+        sueldos_Salarios_2016_GADMIN = sueldos_salarios_1sem_GADMIN + sueldos_salarios_2sem_GADMIN
+        comisiones_2016_GADMIN = comisiones_1sem_GADMIN + comisiones_2sem_GADMIN
+        varios_2016_GADMIN = varios_1semestre_GADMIN + varios_2semestre_GADMIN
+        intereses_prestamo_2016_GADMIN = intereses_prestamo_1sem_GADMIN + intereses_prestamo_2sem_GADMIN
+
+        totalGastosOperacion_1sem = depreciacion_1semestre_GADMIN + sueldos_salarios_1sem_GADMIN + comisiones_1sem_GADMIN + varios_1semestre_GADMIN + intereses_prestamo_1sem_GADMIN
+        totalGastosOperacion_2sem = depreciacion_2semestre_GADMIN + sueldos_salarios_2sem_GADMIN + comisiones_2sem_GADMIN + varios_2semestre_GADMIN + intereses_prestamo_2sem_GADMIN
+        totalGastosOperacion_2016 = depreciacion_2016_GADMIN + sueldos_Salarios_2016_GADMIN + comisiones_2016_GADMIN + varios_2016_GADMIN + intereses_prestamo_2016_GADMIN
+
+        # Variables de Determinacion del Costo Unitario de Productos Terminados
+        costoUnitario_MaterialA_CL=costo_2semestre_MatprimaA*materia_primaA_CL
+        costoUnitario_MaterialB_CL=costo_2semestre_MatprimaB*materia_primaB_CL
+        costoUnitario_MaterialC_CL=costo_2semestre_MatprimaC*materia_primaC_CL
+        costoUnitario_ManoObra_CL=costo_mano_obra_2sem*horas_mano_obra_CL
+        costoUnitario_GIF_CL=costo_xHora_GIF*horas_mano_obra_CL
+        costoUnitario_CL = costoUnitario_MaterialA_CL + costoUnitario_MaterialB_CL + costoUnitario_MaterialC_CL + costoUnitario_ManoObra_CL + costoUnitario_GIF_CL
+
+        costoUnitario_MaterialA_CE=costo_2semestre_MatprimaA*materia_primaA_CE
+        costoUnitario_MaterialB_CE=costo_2semestre_MatprimaB*materia_primaB_CE
+        costoUnitario_MaterialC_CE=costo_2semestre_MatprimaC*materia_primaC_CE
+        costoUnitario_ManoObra_CE=costo_mano_obra_2sem*horas_mano_obra_CE
+        costoUnitario_GIF_CE=costo_xHora_GIF*horas_mano_obra_CE
+        costoUnitario_CE = costoUnitario_MaterialA_CE + costoUnitario_MaterialB_CE + costoUnitario_MaterialC_CE + costoUnitario_ManoObra_CE + costoUnitario_GIF_CE
+
+        costoUnitario_MaterialA_CR=costo_2semestre_MatprimaA*materia_primaA_CR
+        costoUnitario_MaterialB_CR=costo_2semestre_MatprimaB*materia_primaB_CR
+        costoUnitario_MaterialC_CR=costo_2semestre_MatprimaC*materia_primaC_CR
+        costoUnitario_ManoObra_CR=costo_mano_obra_2sem*horas_mano_obra_CR
+        costoUnitario_GIF_CR=costo_xHora_GIF*horas_mano_obra_CR
+        costoUnitario_CR = costoUnitario_MaterialA_CR + costoUnitario_MaterialB_CR + costoUnitario_MaterialC_CR + costoUnitario_ManoObra_CR + costoUnitario_GIF_CR
+
+        #Variables de Valuacion de Inventarios Finales.
+        costoTotal_MateriaA = inv_final_2semestre_MatprimaA * costo_2semestre_MatprimaA
+        costoTotal_MateriaB = inv_final_2semestre_MatprimaB * costo_2semestre_MatprimaB
+        costoTotal_MateriaC = inv_final_2semestre_MatprimaC * costo_2semestre_MatprimaC
+        inv_final_materiales = costoTotal_MateriaA + costoTotal_MateriaB + costoTotal_MateriaC
+
+        costoTotal_ProductoCL = inv_final_2semestre_productoCL * costoUnitario_CL
+        costoTotal_ProductoCE = inv_final_2semestre_productoCE * costoUnitario_CE
+        costoTotal_ProductoCR = inv_final_2semestre_productoCR * costoUnitario_CR
+        inv_final_productosTerminados = costoTotal_ProductoCL + costoTotal_ProductoCE + costoTotal_ProductoCR
+
+        #Variables de Estado de Costo de Produccion y Ventas
+        materialDisponible = inventario_materiales_2015 + compraTotal_2016
+        materialesUtilizados = materialDisponible - inv_final_materiales
+        costoProduccion = materialesUtilizados + totalMOD_2016 + total_GIF_2016
+        produccionDisponible = costoProduccion + inv_producto_terminado_2015
+        costoVentas = produccionDisponible - inv_final_productosTerminados
+
+        #Variables del Estado de Resultados
+        utilidadBruta = total_ventas2016 - costoVentas
+        utilidadOperacion = utilidadBruta - totalGastosOperacion_2016
+        ISR_2016 = utilidadOperacion * ISR
+        PTU_2016 = utilidadOperacion * PTU
+        utilidadNeta = utilidadOperacion - ISR_2016 - PTU_2016
+
+        #Variables del Estado de Flujo de Efectivo
+        totalEntradas_EFE = cobranza_2016 + clientes_2015
+        efectivoDisponible = efectivo_2015 + totalEntradas_EFE
+        pago_GIF = total_GIF_2016-depreciacion_2016_GIF
+        pago_GOp = totalGastosOperacion_2016-depreciacion_2016_GADMIN
+        totalSalidas_EFE = porProveedores_2016 + proveedores_2015 + totalMOD_2016 + pago_GIF + pago_GOp + equipo_nuevo + isr_x_pagar_2015
+        flujoEfectivo = efectivoDisponible - totalSalidas_EFE
+
+        # Variables del Balance General 2016
+        total_ActivoCirculante_2016 = flujoEfectivo + clientes_2016 + deudoresDiversos_2015 + funcionariosyE_2015 + inv_final_materiales + inv_final_productosTerminados
+        planta_equipo_2016 = planta_equipo_2015 + equipo_nuevo
+        depreciacionAcum_2016 = -depreciacionAcu_2015 - depreciacion_2016_GIF - depreciacion_2016_GADMIN
+        total_ActivoNoCirculante_2016 = terreno_2015 + planta_equipo_2016 + depreciacionAcum_2016
+        activoTotal_2016 = total_ActivoCirculante_2016 + total_ActivoNoCirculante_2016
+        total_pasivo_CP_2016 = proveedores_2016 + documentosxpagar_2015 + ISR_2016 + PTU_2016
+        pasivoTotal_2016 = total_pasivo_CP_2016 + total_pasivo_LP_2015
+        totalCapitalContable = capitalContribuido_2015 + capitalGanado_2015 + utilidadNeta
+        pasivoCapital = pasivoTotal_2016 + totalCapitalContable
+
+    if opcion=="2":
+        print("")
+        print("Balance General al 31 de Diciembre del 2015")
+        print(SEPARADOR)
+        print("ACTIVOS")
+        print("")
+        print(f"Efectivo:\t\t\t\t {efectivo_2015}")
+        print(f"Clientes:\t\t\t\t {clientes_2015}")
+        print(f"Deudores Diversos:\t\t\t {deudoresDiversos_2015}")
+        print(f"Funcionarios y empleados:\t\t {funcionariosyE_2015}")
+        print(f"Inventario de materiales:\t\t {inventario_materiales_2015}")
+        print(f"Inventario del producto terminado:\t {inv_producto_terminado_2015}")
+        print(f"Total de Activo Circulante:\t\t {total_ActivoCirculante_2015}")
+        print("")
+        print(f"Terreno:\t\t\t\t {terreno_2015}")
+        print(f"Planta y Equipo:\t\t\t {planta_equipo_2015}")
+        print(f"Depreciacion Acumulada:\t\t\t {depreciacionAcu_2015}")
+        print(f"Total de Activo No Circulante:\t\t {total_ActivoNoCirculante_2015}")
+        print("")
+        print(f"ACTIVO TOTAL:\t\t\t\t {activoTotal_2015}")
+        print("")
+        print("PASIVOS")
+        print("")
+        print(f"Proveedores:\t\t\t\t {proveedores_2015}")
+        print(f"Documento por pagar:\t\t\t {documentosxpagar_2015}")
+        print(f"ISR por pagar:\t\t\t\t {isr_x_pagar_2015}")
+        print(f"Total de Pasivo Corto Plazo:\t\t {total_pasivo_CP_2015}")
+        print("")
+        print(f"Prestamos Bancarios:\t\t\t {prestamos_bancarios_2015}")
+        print(f"Total Pasivo Largo Plazo:\t\t {total_pasivo_LP_2015}")
+        print("")
+        print(f"PASIVO TOTAL:\t\t\t\t {pasivoTotal_2015}")
+        print("")
+        print("CAPITAL CONTABLE")
+        print("")
+        print(f"Capital Contribuido:\t\t\t {capitalContribuido_2015}")
+        print(f"Capital Ganado:\t\t\t\t {capitalGanado_2015}")
+        print(f"Capital Contable Total:\t\t\t {capitalContableTotal_2015}")
+        print("")
+        print(f"SUMA DEL PASIVO Y CAPITAL:\t\t {suma_PasivoCapital_2015}")
+        print(SEPARADOR)
+
+        print("")
+        print("REQUERIMIENTO DE MATERIALES: ")
+        print(SEPARADOR)
+        print("\t\t\t\t CL \t CE \t CR")
+        print(f"Materia Prima A en metros\t{materia_primaA_CL}\t{materia_primaA_CE}\t{materia_primaA_CR}")
+        print(f"Materia Prima B en metros\t{materia_primaB_CL}\t{materia_primaB_CE}\t{materia_primaB_CR}")
+        print(f"Materia Prima C en metros\t{materia_primaC_CL}\t{materia_primaC_CE}\t{materia_primaC_CR}")
+        print(f"Horas Mano de Obra\t\t{horas_mano_obra_CL}\t{horas_mano_obra_CE}\t{horas_mano_obra_CR}")
+        print("Los gastos indirectos se aplican con base en hora de mano de obra")
+        print(SEPARADOR)
+
+        print("")
+        print("INFORMACION DE INVENTARIOS: ")
+        print(SEPARADOR)
+        print(f"Inventario Inicial Primer Semestre de Materia Prima A en mts: {inv_inicial_1semestre_MatprimaA}")
+        print(f"Inventario Final Segundo Semestre de Materia Prima A en mts: {inv_final_2semestre_MatprimaA}")
+        print(f"Costo Primer Semestre de Materia Prima A: {costo_1semestre_MatprimaA}")
+        print(f"Costo Segundo Semestre de Materia Prima A: {costo_2semestre_MatprimaA}")
+        print("")
+
+        print(f"Inventario Inicial Primer Semestre de Materia Prima B en mts: {inv_inicial_1semestre_MatprimaB}")
+        print(f"Inventario Final Segundo Semestre de Materia Prima B en mts: {inv_final_2semestre_MatprimaB}")
+        print(f"Costo Primer Semestre de Materia Prima B: {costo_1semestre_MatprimaB}")
+        print(f"Costo Segundo Semestre de Materia Prima B: {costo_2semestre_MatprimaB}")
+        print("")
+
+        print(f"Inventario Inicial Primer Semestre de Materia Prima C en mts: {inv_inicial_1semestre_MatprimaC}")
+        print(f"Inventario Final Segundo Semestre de Materia Prima C en mts: {inv_final_2semestre_MatprimaC}")
+        print(f"Costo Primer Semestre de Materia Prima C: {costo_1semestre_MatprimaC}")
+        print(f"Costo Segundo Semestre de Materia Prima C: {costo_2semestre_MatprimaC}")
+        print(SEPARADOR)
+
+        print("")
+        print("PRODUCTOS")
+        print(SEPARADOR)
+        print("\t\t\t\t\t CL \t CE \t CR")
+        print(f"Precio de Venta Primer Semestre\t\t{precio_venta_1semestre_CL}\t{precio_venta_1semestre_CE}\t{precio_venta_1semestre_CR}")
+        print(f"Precio de Venta Segundo Semestre\t{precio_venta_2semestre_CL}\t{precio_venta_2semestre_CE}\t{precio_venta_2semestre_CR}")
+        print(f"Ventas Planeadas Primer Semestre\t{ventas_planeadas_1semestre_CL}\t{ventas_planeadas_1semestre_CE}\t{ventas_planeadas_1semestre_CR}")
+        print(f"Ventas Planeadas Segundo Semestre\t{ventas_planeadas_2semestre_CL}\t{ventas_planeadas_2semestre_CE}\t{ventas_planeadas_2semestre_CR}")
+        print(SEPARADOR)
+
+        print("")
+        print("GASTOS DE ADMINISTRACION Y VENTAS")
+        print(SEPARADOR)
+        print(f"Depreciacion: {depreciacion_1semestre_GADMIN} 1er Semestre")
+        print(f"Depreciacion: {depreciacion_2semestre_GADMIN} 2do Semestre")
+        print(f"Sueldos y Salarios: {sueldos_salarios_1sem_GADMIN} 1er Semestre")
+        print(f"Sueldos y Salarios: {sueldos_salarios_2sem_GADMIN} 2do Semestre")
+        print(f"Comisiones: 1% de las ventas proyectadas")
+        print(f"Varios: {varios_1semestre_GADMIN} 1er Semestre")
+        print(f"Varios: {varios_2semestre_GADMIN} 2do Semestre")
+        print(f"Intereses por Prestamo: {intereses_prestamo_1sem_GADMIN} 1er Semestre")
+        print(f"Intereses por Prestamo: {intereses_prestamo_2sem_GADMIN} 2do Semestre")
+        print(SEPARADOR)
+
+    if opcion=="3":
+        print("")
+        print("PRESUPUESTO MAESTRO")
+        print("Maquilados Regionales S.A de C.V")
+        print("I. PRESUPUESTO DE OPERACION")
+        print("")
+        print("1. Presupuesto de Ventas")
+        print("\t\t\t\t\t 1er Semestre \t 2do Semestre \t 2016")
+        print("PRODUCTO CL")
+        print(f"Unidades a vender\t\t\t{ventas_planeadas_1semestre_CL}\t\t{ventas_planeadas_2semestre_CL}")
+        print(f"Precio de Venta\t\t\t\t{precio_venta_1semestre_CL}\t\t{precio_venta_2semestre_CL}")
+        print(f"Importe de Venta\t\t\t{importe_venta_2016CL_1sem}\t{importe_venta_2016CL_2sem}\t{importe_ventatotal_2016CL}")
+        print("")
+        print("PRODUCTO CE")
+        print(f"Unidades a vender\t\t\t{ventas_planeadas_1semestre_CE}\t\t{ventas_planeadas_2semestre_CE}")
+        print(f"Precio de Venta\t\t\t\t{precio_venta_1semestre_CE}\t\t{precio_venta_2semestre_CE}")
+        print(f"Importe de Venta\t\t\t{importe_venta_2016CE_1sem}\t{importe_venta_2016CE_2sem}\t{importe_ventatotal_2016CE}")
+        print("")
+        print("PRODUCTO CR")
+        print(f"Unidades a vender\t\t\t{ventas_planeadas_1semestre_CR}\t\t{ventas_planeadas_2semestre_CR}")
+        print(f"Precio de Venta\t\t\t\t{precio_venta_1semestre_CR}\t\t{precio_venta_2semestre_CR}")
+        print(f"Importe de Venta\t\t\t{importe_venta_2016CR_1sem}\t{importe_venta_2016CR_2sem}\t{importe_ventatotal_2016CR}")
+        print(f"Total de Ventas por Semestre\t\t{total_ventas1Semestre}\t{total_ventas2Semestre}\t{total_ventas2016}")
+
+        print("")
+        print("2. Determinacion del Saldo de Clientes y Flujo de Entradas")
+        print("Descripcion\t\t\tImporte\t\tTotal")
+        print(f"Saldo de clientes 2015\t\t\t\t{clientes_2015}")
+        print(f"Ventas 2016 \t\t\t\t\t{total_ventas2016}")
+        print(f"Total de Clientes 2016\t\t\t\t{total_clientes_2016}")
+        print("")
+        print("Entradas de Efectivo:")
+        print(f"Por Cobranza del 2015\t\t{clientes_2015}")
+        print(f"Por Cobranza del 2016\t\t{cobranza_2016}")
+        print(f"Total de Entradas 2016:\t\t\t\t{total_entradas_2016}")
+        print("")
+        print(f"Saldo de Clientes 2016:\t\t\t\t{clientes_2016}")
+
+        print("")
+        print("3. Presupuesto de Produccion")
+        print("\t\t\t\t\t 1er Semestre \t 2do Semestre \t Total 2016")
+        print("PRODUCTO CL")
+        print(f"Unidades a vender\t\t\t\t{ventas_planeadas_1semestre_CL}\t\t{ventas_planeadas_2semestre_CL}\t\t{unidades_vender_2016CL}")
+        print(f"Inventario Final\t\t\t\t{inv_inicial_1semestre_productoCL}\t\t{inv_final_2semestre_productoCL}\t\t{inv_final_2semestre_productoCL}")
+        print(f"Total de Unidades\t\t\t\t{total_unidades_1semCL}\t\t{total_unidades_2semCL}\t\t{total_unidades_2016CL}")
+        print(f"Inventario Inicial\t\t\t\t{inv_inicial_1semestre_productoCL}\t\t{inv_inicial_1semestre_productoCL}\t\t{inv_inicial_1semestre_productoCL}")
+        print(f"Unidades a producir\t\t\t\t{unidades_producir_1semCL}\t\t{unidades_producir_2semCL}\t\t{unidades_producir_2016CL}")
+        print("")
+        print("PRODUCTO CE")
+        print(f"Unidades a vender\t\t\t\t{ventas_planeadas_1semestre_CE}\t\t{ventas_planeadas_2semestre_CE}\t\t{unidades_vender_2016CE}")
+        print(f"Inventario Final\t\t\t\t{inv_inicial_1semestre_productoCE}\t\t{inv_final_2semestre_productoCE}\t\t{inv_final_2semestre_productoCE}")
+        print(f"Total de Unidades\t\t\t\t{total_unidades_1semCE}\t\t{total_unidades_2semCE}\t\t{total_unidades_2016CE}")
+        print(f"Inventario Inicial\t\t\t\t{inv_inicial_1semestre_productoCE}\t\t{inv_inicial_1semestre_productoCE}\t\t{inv_inicial_1semestre_productoCE}")
+        print(f"Unidades a producir\t\t\t\t{unidades_producir_1semCE}\t\t{unidades_producir_2semCE}\t\t{unidades_producir_2016CE}")
+        print("")
+        print("PRODUCTO CR")
+        print(f"Unidades a vender\t\t\t\t{ventas_planeadas_1semestre_CR}\t\t{ventas_planeadas_2semestre_CR}\t\t{unidades_vender_2016CR}")
+        print(f"Inventario Final\t\t\t\t{inv_inicial_1semestre_productoCR}\t\t{inv_final_2semestre_productoCR}\t\t{inv_final_2semestre_productoCR}")
+        print(f"Total de Unidades\t\t\t\t{total_unidades_1semCR}\t\t{total_unidades_2semCR}\t\t{total_unidades_2016CR}")
+        print(f"Inventario Inicial\t\t\t\t{inv_inicial_1semestre_productoCR}\t\t{inv_inicial_1semestre_productoCR}\t\t{inv_inicial_1semestre_productoCR}")
+        print(f"Unidades a producir\t\t\t\t{unidades_producir_1semCR}\t\t{unidades_producir_2semCR}\t\t{unidades_producir_2016CR}")
+
+        print("")
+        print("4. Presupuesto de Requerimiento de Materiales")
+        print("\t\t\t\t\t 1er Semestre \t 2do Semestre \t Total 2016")
+        print("PRODUCTO CL")
+        print(f"Unidades a Producir\t\t\t\t{unidades_producir_1semCL}\t\t{unidades_producir_2semCL}\t\t{unidades_producir_2016CL}")
+        print("")
+        print("Material A")
+        print(f"Requerimeinto de material\t\t\t{materia_primaA_CL}\t\t{materia_primaA_CL}\t\t{materia_primaA_CL}")
+        print(f"Total de Material A requerido\t\t\t{total_materialA_1semCL}\t\t{total_materialA_2semCL}\t\t{total_materialA_2016CL}")
+        print("Material B")
+        print(f"Requerimeinto de material\t\t\t{materia_primaB_CL}\t\t{materia_primaB_CL}\t\t{materia_primaB_CL}")
+        print(f"Total de Material B requerido\t\t\t{total_materialB_1semCL}\t\t{total_materialB_2semCL}\t\t{total_materialB_2016CL}")
+        print("Material C")
+        print(f"Requerimeinto de material\t\t\t{materia_primaC_CL}\t\t{materia_primaC_CL}\t\t{materia_primaC_CL}")
+        print(f"Total de Material C requerido\t\t\t{total_materialC_1semCL}\t{total_materialC_2semCL}\t\t{total_materialC_2016CL}")
+        print("")
+        print("PRODUCTO CE")
+        print(f"Unidades a Producir\t\t\t\t{unidades_producir_1semCE}\t\t{unidades_producir_2semCE}\t\t{unidades_producir_2016CE}")
+        print("")
+        print("Material A")
+        print(f"Requerimeinto de material\t\t\t{materia_primaA_CE}\t\t{materia_primaA_CE}\t\t{materia_primaA_CE}")
+        print(f"Total de Material A requerido\t\t\t{total_materialA_1semCE}\t\t{total_materialA_2semCE}\t\t{total_materialA_2016CE}")
+        print("Material B")
+        print(f"Requerimeinto de material\t\t\t{materia_primaB_CE}\t\t{materia_primaB_CE}\t\t{materia_primaB_CE}")
+        print(f"Total de Material B requerido\t\t\t{total_materialB_1semCE}\t\t{total_materialB_2semCE}\t\t{total_materialB_2016CE}")
+        print("Material C")
+        print(f"Requerimeinto de material\t\t\t{materia_primaC_CE}\t\t{materia_primaC_CE}\t\t{materia_primaC_CE}")
+        print(f"Total de Material C requerido\t\t\t{total_materialC_1semCE}\t{total_materialC_2semCE}\t{total_materialC_2016CE}")
+        print("")
+        print("PRODUCTO CR")
+        print(f"Unidades a Producir\t\t\t\t{unidades_producir_1semCR}\t\t{unidades_producir_2semCR}\t\t{unidades_producir_2016CR}")
+        print("")
+        print("Material A")
+        print(f"Requerimeinto de material\t\t\t{materia_primaA_CR}\t\t{materia_primaA_CR}\t\t{materia_primaA_CR}")
+        print(f"Total de Material A requerido\t\t\t{total_materialA_1semCR}\t\t{total_materialA_2semCR}\t\t{total_materialA_2016CR}")
+        print("Material B")
+        print(f"Requerimeinto de material\t\t\t{materia_primaB_CR}\t\t{materia_primaB_CR}\t\t{materia_primaB_CR}")
+        print(f"Total de Material B requerido\t\t\t{total_materialB_1semCR}\t\t{total_materialB_2semCR}\t\t{total_materialB_2016CR}")
+        print("Material C")
+        print(f"Requerimeinto de material\t\t\t{materia_primaC_CR}\t\t{materia_primaC_CR}\t\t{materia_primaC_CR}")
+        print(f"Total de Material C requerido\t\t\t{total_materialC_1semCR}\t\t{total_materialC_2semCR}\t\t{total_materialC_2016CR}")
+        print("")
+        print("Total de Requerimientos (gramos)")
+        print(f"Material A\t\t\t\t\t{materialA_TOTAL_1sem}\t\t{materialA_TOTAL_2sem}\t\t{materialA_TOTAL_2016}")
+        print(f"Material B\t\t\t\t\t{materialB_TOTAL_1sem}\t\t{materialB_TOTAL_2sem}\t\t{materialB_TOTAL_2016}")
+        print(f"Material C\t\t\t\t\t{materialC_TOTAL_1sem}\t{materialC_TOTAL_2sem}\t{materialC_TOTAL_2016}")
+
+        print("")
+        print("5. Presupuesto de Compras de Materiales")
+        print("\t\t\t\t\t 1er Semestre \t 2do Semestre \t Total 2016")
+        print("Material A")
+        print(f"Requerimiento de materiales\t\t\t{materialA_TOTAL_1sem}\t\t{materialA_TOTAL_2sem}\t\t{materialA_TOTAL_2016}")
+        print(f"Inventario Final\t\t\t\t{inv_inicial_1semestre_MatprimaA}\t\t{inv_final_2semestre_MatprimaA}\t\t{inv_final_2semestre_MatprimaA}")
+        print(f"Total de Materiales\t\t\t\t{totalMaterialesA_1sem}\t\t{totalMaterialesA_2sem}\t\t{totalMaterialesA_2016}")
+        print(f"Inventario Inicial\t\t\t\t{inv_inicial_1semestre_MatprimaA}\t\t{inv_inicial_1semestre_MatprimaA}\t\t{inv_inicial_1semestre_MatprimaA}")
+        print(f"Material a Comprar\t\t\t\t{materialComprarA_1sem}\t\t{materialComprarA_2sem}\t\t{materialComprarA_2016}")
+        print(f"Precio de Compra \t\t\t\t{costo_1semestre_MatprimaA}\t\t{costo_2semestre_MatprimaA}")
+        print(f"Total de Material A en $: \t\t\t${totalMaterialA_1sem_PESOS}\t${totalMaterialA_2sem_PESOS}\t${totalMaterialA_2016_PESOS}")
+        print("")
+        print("Material B")
+        print(f"Requerimiento de materiales\t\t\t{materialB_TOTAL_1sem}\t\t{materialB_TOTAL_2sem}\t\t{materialB_TOTAL_2016}")
+        print(f"Inventario Final\t\t\t\t{inv_inicial_1semestre_MatprimaB}\t\t{inv_final_2semestre_MatprimaB}\t\t{inv_final_2semestre_MatprimaB}")
+        print(f"Total de Materiales\t\t\t\t{totalMaterialesB_1sem}\t\t{totalMaterialesB_2sem}\t\t{totalMaterialesB_2016}")
+        print(f"Inventario Inicial\t\t\t\t{inv_inicial_1semestre_MatprimaB}\t\t{inv_inicial_1semestre_MatprimaB}\t\t{inv_inicial_1semestre_MatprimaB}")
+        print(f"Material a Comprar\t\t\t\t{materialComprarB_1sem}\t\t{materialComprarB_2sem}\t\t{materialComprarB_2016}")
+        print(f"Precio de Compra \t\t\t\t{costo_1semestre_MatprimaB}\t\t{costo_2semestre_MatprimaB}")
+        print(f"Total de Material B en $: \t\t\t${totalMaterialB_1sem_PESOS}\t${totalMaterialB_2sem_PESOS}\t${totalMaterialB_2016_PESOS}")
+        print("")
+        print("Material C")
+        print(f"Requerimiento de materiales\t\t\t{materialC_TOTAL_1sem}\t{materialC_TOTAL_2sem}\t\t{materialC_TOTAL_2016}")
+        print(f"Inventario Final\t\t\t\t{inv_inicial_1semestre_MatprimaC}\t\t{inv_final_2semestre_MatprimaC}\t\t{inv_final_2semestre_MatprimaC}")
+        print(f"Total de Materiales\t\t\t\t{totalMaterialesC_1sem}\t{totalMaterialesC_2sem}\t\t{totalMaterialesC_2016}")
+        print(f"Inventario Inicial\t\t\t\t{inv_inicial_1semestre_MatprimaC}\t\t{inv_inicial_1semestre_MatprimaC}\t\t{inv_inicial_1semestre_MatprimaC}")
+        print(f"Material a Comprar\t\t\t\t{materialComprarC_1sem}\t{materialComprarC_2sem}\t\t{materialComprarC_2016}")
+        print(f"Precio de Compra \t\t\t\t{costo_1semestre_MatprimaC}\t\t{costo_2semestre_MatprimaC}")
+        print(f"Total de Material C en $: \t\t\t${totalMaterialC_1sem_PESOS}\t${totalMaterialC_2sem_PESOS}\t${totalMaterialC_2016_PESOS}")
+        print("")
+        print(f"Compras Totales \t\t\t\t${compraTotal_1sem}\t${compraTotal_2sem}\t${compraTotal_2016}")
+
+        print("")
+        print("6. Determinacion del Saldo de Proveedores y Flujo de Salidas")
+        print("Descripcion\t\t\tImporte\t\tTotal")
+        print(f"Saldo de Proveedores 2015\t\t\t{proveedores_2015}")
+        print(f"Compras 2016 \t\t\t\t\t{compraTotal_2016}")
+        print(f"Total de Proveedores 2016\t\t\t{totalProveedores_2016}")
+        print("")
+        print("Entradas de Efectivo:")
+        print(f"Por Proveedores del 2015\t{proveedores_2015}")
+        print(f"Por Proveedores del 2016\t{porProveedores_2016}")
+        print(f"Total de Salidas 2016:\t\t{totalSalidas_2016}")
+        print("")
+        print(f"Saldo de Proveedores 2016:\t\t\t{proveedores_2016}")
+
+        print("")
+        print("7. Presupuesto de Mano de Obra Directa")
+        print("\t\t\t\t\t 1er Semestre \t 2do Semestre \t Total 2016")
+        print("Producto CL")
+        print(f"Unidades a producir\t\t\t\t{unidades_producir_1semCL}\t\t{unidades_producir_2semCL}\t\t{unidades_producir_2016CL}")
+        print(f"Horas requeridas por unidad\t\t\t{horas_mano_obra_CL}\t\t{horas_mano_obra_CL}\t\t{horas_mano_obra_CL}")
+        print(f"Total de horas requeridas\t\t\t{totalHorasRequeridas_1semCL}\t\t{totalHorasRequeridas_2semCL}\t\t{totalHorasRequeridas_2016CL}")
+        print(f"Cuota por hora\t\t\t\t\t{costo_mano_obra_1sem}\t\t{costo_mano_obra_2sem}")
+        print(f"Importe de M.O.D.\t\t\t\t{importeMOD_1semCL}\t{importeMOD_2semCL}\t{importeMOD_2016CL}")
+        print("")
+        print("Producto CE")
+        print(f"Unidades a producir\t\t\t\t{unidades_producir_1semCE}\t\t{unidades_producir_2semCE}\t\t{unidades_producir_2016CE}")
+        print(f"Horas requeridas por unidad\t\t\t{horas_mano_obra_CE}\t\t{horas_mano_obra_CE}\t\t{horas_mano_obra_CE}")
+        print(f"Total de horas requeridas\t\t\t{totalHorasRequeridas_1semCE}\t\t{totalHorasRequeridas_2semCE}\t\t{totalHorasRequeridas_2016CE}")
+        print(f"Cuota por hora\t\t\t\t\t{costo_mano_obra_1sem}\t\t{costo_mano_obra_2sem}")
+        print(f"Importe de M.O.D.\t\t\t\t{importeMOD_1semCE:.2f}\t{importeMOD_2semCE:.2f}\t{importeMOD_2016CE:.2f}")
+        print("")
+        print("Producto CR")
+        print(f"Unidades a producir\t\t\t\t{unidades_producir_1semCR}\t\t{unidades_producir_2semCR}\t\t{unidades_producir_2016CR}")
+        print(f"Horas requeridas por unidad\t\t\t{horas_mano_obra_CR}\t\t{horas_mano_obra_CR}\t\t{horas_mano_obra_CR}")
+        print(f"Total de horas requeridas\t\t\t{totalHorasRequeridas_1semCR}\t\t{totalHorasRequeridas_2semCR}\t\t{totalHorasRequeridas_2016CR}")
+        print(f"Cuota por hora\t\t\t\t\t{costo_mano_obra_1sem}\t\t{costo_mano_obra_2sem}")
+        print(f"Importe de M.O.D.\t\t\t\t{importeMOD_1semCR:.2f}\t{importeMOD_2semCR:.2f}\t{importeMOD_2016CR:.2f}")
+        print("")
+        print(f"Total de Horas requeridas por semestre: \t{horasRequeridas_todosProductos_1sem}\t\t{horasRequeridas_todosProductos_2sem}\t\t{horasRequeridas_todosProductos_2016}")
+        print("")
+        print(f"Total de M.O.D. por semestre \t\t\t${totalMOD_1sem:.2f}\t${totalMOD_2sem:.2f}\t${totalMOD_2016:.2f}")
+
+        print("")
+        print("8. Presupuesto de Gastos Indirectos de Fabricacion")
+        print("\t\t\t\t 1er Semestre \t 2do Semestre \t Total 2016")
+        print(f"Depreciacion \t\t\t\t{depreciacion_1sem_GFI}\t\t{depreciacion_2sem_GFI}\t\t{depreciacion_2016_GIF}")
+        print(f"Seguros \t\t\t\t{seguros_1sem_GFI}\t\t{seguros_2sem_GFI}\t\t{seguros_2016_GIF}")
+        print(f"Mantenimiento \t\t\t\t{mantenimiento_1sem_GFI}\t\t{mantenimiento_2sem_GFI}\t\t{mantenimiento_2016_GIF}")
+        print(f"Energeticos \t\t\t\t{energeticos_1sem_GFI}\t\t{energeticos_2sem_GFI}\t\t{energeticos_2016_GIF}")
+        print(f"Varios \t\t\t\t\t{varios_1sem_GFI}\t\t{varios_2sem_GFI}\t\t{varios_2016_GIF}")
+        print(f"Total G.I.F. por semestre \t\t{total_GIF_1sem:.2f}\t{total_GIF_2sem:.2f}\t{total_GIF_2016:.2f}")
+        print("Coeficiente para determinar el costo por hora de Gastos Indirectos de Fabricacion")
+        print(f"Total de G.I.F.\t\t\t\t\t\t\t\t{total_GIF_2016:.2f}")
+        print(f"Total Horas MOD Anual \t\t\t\t\t\t\t{horasRequeridas_todosProductos_2016:.2f}")
+        print(f"Costo por Hora de GIF \t\t\t\t\t\t\t{costo_xHora_GIF:.2f}")
+
+        print("")
+        print("9. Presupuesto de Gastos de Operacion")
+        print("\t\t\t\t 1er Semestre \t 2do Semestre \t Total 2016")
+        print(f"Depreciacion \t\t\t\t{depreciacion_1semestre_GADMIN }\t\t{depreciacion_2semestre_GADMIN }\t\t{depreciacion_2016_GADMIN}")
+        print(f"Sueldos y Salarios \t\t\t{sueldos_salarios_1sem_GADMIN }\t{sueldos_salarios_2sem_GADMIN }\t{sueldos_Salarios_2016_GADMIN}")
+        print(f"Comisiones \t\t\t\t{comisiones_1sem_GADMIN}\t\t{comisiones_2sem_GADMIN}\t\t{comisiones_2016_GADMIN}")
+        print(f"Varios \t\t\t\t\t{varios_1semestre_GADMIN }\t\t{varios_2semestre_GADMIN }\t\t{varios_2016_GADMIN}")
+        print(f"Intereses por Prestamo \t\t\t{intereses_prestamo_1sem_GADMIN}\t\t{intereses_prestamo_2sem_GADMIN}\t\t{intereses_prestamo_2016_GADMIN}")
+        print(f"Total de Gastos de Operacion \t\t{totalGastosOperacion_1sem:.2f}\t{totalGastosOperacion_2sem:.2f}\t{totalGastosOperacion_2016:.2f}")
+
+        print("")
+        print("10. Determinacion del Costo Unitario de Productos Terminados.")
+        print("PRODUCTO CL")
+        print("Descripcion\t\t\tCosto\tCantidad\tCosto Unitario")
+        print(f"Material A\t\t\t{costo_2semestre_MatprimaA}\t{materia_primaA_CL}\t\t{costoUnitario_MaterialA_CL}")
+        print(f"Material B\t\t\t{costo_2semestre_MatprimaB}\t{materia_primaB_CL}\t\t{costoUnitario_MaterialB_CL}")
+        print(f"Material C\t\t\t{costo_2semestre_MatprimaC}\t{materia_primaC_CL}\t\t{costoUnitario_MaterialC_CL}")
+        print(f"Mano de Obra\t\t\t{costo_mano_obra_2sem}\t{horas_mano_obra_CL}\t\t{costoUnitario_ManoObra_CL}")
+        print(f"GIF\t\t\t\t{costo_xHora_GIF:.2f}\t{horas_mano_obra_CL:.2f}\t\t{costoUnitario_GIF_CL:.2f}")
+        print(f"Costo Unitario\t\t\t\t\t\t{costoUnitario_CL:.2f}")
+        print("")
+        print("PRODUCTO CE")
+        print("Descripcion\t\t\tCosto\tCantidad\tCosto Unitario")
+        print(f"Material A\t\t\t{costo_2semestre_MatprimaA}\t{materia_primaA_CE}\t\t{costoUnitario_MaterialA_CE:.2f}")
+        print(f"Material B\t\t\t{costo_2semestre_MatprimaB}\t{materia_primaB_CE}\t\t{costoUnitario_MaterialB_CE:.2f}")
+        print(f"Material C\t\t\t{costo_2semestre_MatprimaC}\t{materia_primaC_CE}\t\t{costoUnitario_MaterialC_CE}")
+        print(f"Mano de Obra\t\t\t{costo_mano_obra_2sem}\t{horas_mano_obra_CE}\t\t{costoUnitario_ManoObra_CE}")
+        print(f"GIF\t\t\t\t{costo_xHora_GIF:.2f}\t{horas_mano_obra_CE:.2f}\t\t{costoUnitario_GIF_CE:.2f}")
+        print(f"Costo Unitario\t\t\t\t\t\t{costoUnitario_CE:.2f}")
+        print("")
+        print("PRODUCTO CR")
+        print("Descripcion\t\t\tCosto\tCantidad\tCosto Unitario")
+        print(f"Material A\t\t\t{costo_2semestre_MatprimaA}\t{materia_primaA_CR}\t\t{costoUnitario_MaterialA_CR}")
+        print(f"Material B\t\t\t{costo_2semestre_MatprimaB}\t{materia_primaB_CR}\t\t{costoUnitario_MaterialB_CR}")
+        print(f"Material C\t\t\t{costo_2semestre_MatprimaC}\t{materia_primaC_CR}\t\t{costoUnitario_MaterialC_CR}")
+        print(f"Mano de Obra\t\t\t{costo_mano_obra_2sem}\t{horas_mano_obra_CR}\t\t{costoUnitario_ManoObra_CR}")
+        print(f"GIF\t\t\t\t{costo_xHora_GIF:.2f}\t{horas_mano_obra_CR:.2f}\t\t{costoUnitario_GIF_CR:.2f}")
+        print(f"Costo Unitario\t\t\t\t\t\t{costoUnitario_CR:.2f}")
+
+        print("")
+        print("11. Valuacion de Inventrios Finales.")
+        print("Inventario Final de Materiales")
+        print("Descripcion\t\t\tUnidades\tCosto Unitario\tCosto Total")
+        print(f"Material A\t\t\t\t{inv_final_2semestre_MatprimaA:.2f}\t\t{costo_2semestre_MatprimaA:.2f}\t\t{costoTotal_MateriaA:.2f}")
+        print(f"Material B\t\t\t\t{inv_final_2semestre_MatprimaB:.2f}\t\t{costo_2semestre_MatprimaB:.2f}\t\t{costoTotal_MateriaB:.2f}")
+        print(f"Material C\t\t\t\t{inv_final_2semestre_MatprimaC:.2f}\t\t{costo_2semestre_MatprimaC:.2f}\t\t{costoTotal_MateriaC:.2f}")
+        print(f"Inventario Final de Materiales\t\t\t\t\t\t{inv_final_materiales:.2f}")
+        print("")
+        print("Inventario Final de Producto Terminado")
+        print("Descripcion\t\t\tUnidades\tCosto Unitario\tCosto Total")
+        print(f"Prodcuto CL\t\t\t\t{inv_final_2semestre_productoCL:.2f}\t\t{costoUnitario_CL:.2f}\t\t{costoTotal_ProductoCL:.2f}")
+        print(f"Producto CE\t\t\t\t{inv_final_2semestre_productoCE:.2f}\t\t{costoUnitario_CE:.2f}\t\t{costoTotal_ProductoCE:.2f}")
+        print(f"Producto CR\t\t\t\t{inv_final_2semestre_productoCR:.2f}\t\t{costoUnitario_CR:.2f}\t\t{costoTotal_ProductoCR:.2f}")
+        print(f"Inventario Final de Preducto Terminado\t\t\t\t\t{inv_final_productosTerminados:.2f}")
+        print("")
+
+
+    if opcion=="4":
+        print("")
+        print("II. Presupuesto Financiero")
+        print("MAQUILADOS REGIONALES S.A. DE C.V.")
+        print("Estado de Costo de Produccion y Ventas")
+        print("Presupuesto del 1 de Enero al 31 de Diciembre del 2016")
+        print("")
+        print(SEPARADOR)
+        print(f"Saldo Inicial de Materiales \t\t\t{inventario_materiales_2015:.2f}")
+        print(f"Compras de Materiales \t\t\t\t{compraTotal_2016:.2f}")
+        print(f"Material Disponible \t\t\t\t{materialDisponible:.2f}")
+        print(f"Inventario Final de Materiales \t\t\t{inv_final_materiales:.2f}")
+        print(f"Materiales Utilizados \t\t\t\t{materialesUtilizados:.2f}")
+        print(f"Mano de Obra Directa \t\t\t\t{totalMOD_2016:.2f}")
+        print(f"Gastos de Fabricacion Indirectos \t\t{total_GIF_2016:.2f}")
+        print(f"Costo de Produccion \t\t\t\t{costoProduccion:.2f}")
+        print(f"Inventario Inicial de Productos Terminados \t{inv_producto_terminado_2015:.2f}")
+        print(f"Total de Produccion Disponible \t\t\t{produccionDisponible:.2f}")
+        print(f"Inventario Final de Productos Terminados \t{inv_final_productosTerminados:.2f}")
+        print(f"Costo de Ventas \t\t\t\t{costoVentas:.2f}")
+
+        print("")
+        print("MAQUILADOS REGIONALES S.A. DE C.V.")
+        print("Estado de Resultados")
+        print("Presupuesto del 1 de Enero al 31 de Diciembre del 2016")
+        print("")
+        print(SEPARADOR)
+        print(f"Ventas \t\t\t {total_ventas2016:.2f}")
+        print(f"Costo de Ventas \t{costoVentas:.2f}")
+        print(f"Utilidad Bruta \t\t{utilidadBruta:.2f}")
+        print(f"Gastos de Operacion \t{totalGastosOperacion_2016:.2f}")
+        print(f"Utilidad de Operacion \t{utilidadOperacion:.2f}")
+        print(f"ISR \t\t\t{ISR_2016:.2f}")
+        print(f"PTU \t\t\t{PTU_2016:.2f}")
+        print(f"Utilidad Neta \t\t{utilidadNeta:.2f}")
+        print(SEPARADOR)
+
+        print("")
+        print("MAQUILADOS REGIONALES S.A. DE C.V.")
+        print("Estado de Flujo de Efectivo")
+        print("Presupuesto del 1 de Enero al 31 de Diciembre del 2016")
+        print("")
+        print(SEPARADOR)
+        print(f"Saldo Inicial de Efectivo \t\t\t\t{efectivo_2015}")
+        print(f"Entradas: ")
+        print(f"Cobranza 2016 \t\t\t\t{cobranza_2016:.2f}")
+        print(f"Cobranza 2015\t\t\t\t{clientes_2015:.2f}")
+        print(f"Total de Entradas \t\t\t\t\t {totalEntradas_EFE:.2f}")
+        print(f"Efectivo Disponible \t\t\t\t\t {efectivoDisponible:.2f}")
+        print("Salidas: ")
+        print(f"Proveedores 2016\t\t\t{porProveedores_2016:.2f}")
+        print(f"Proveedores 2015\t\t\t{proveedores_2015:.2f}")
+        print(f"Pago Mano de Obra Directa\t\t{totalMOD_2016:.2f}")
+        print(f"Pago Gastos Indirectos de Fabricacion\t{pago_GIF:.2f}")
+        print(f"Pago Gastos de Operacion\t\t{pago_GOp:.2f}")
+        print(f"Compra de Activo Fijo\t\t\t{equipo_nuevo:.2f}")
+        print(f"Pago ISR 2015\t\t\t\t{isr_x_pagar_2015:.2f}")
+        print("")
+        print(f"Total de Salidas\t\t\t\t\t{totalSalidas_EFE:.2f}")
+        print(f"Flujo de Efectivo Actual\t\t\t\t{flujoEfectivo:.2f}")
+        print(SEPARADOR)
+
+        print("")
+        print("MAQUILADOS REGIONALES S.A. DE C.V.")
+        print("Balance General")
+        print("Presupuesto al 31 de Diciembre del 2016")
+        print(SEPARADOR)
+        print("ACTIVOS")
+        print("")
+        print(f"Efectivo:\t\t\t\t {flujoEfectivo:.2f}")
+        print(f"Clientes:\t\t\t\t {clientes_2016:.2f}")
+        print(f"Deudores Diversos:\t\t\t {deudoresDiversos_2015:.2f}")
+        print(f"Funcionarios y empleados:\t\t {funcionariosyE_2015:.2f}")
+        print(f"Inventario de materiales:\t\t {inv_final_materiales:.2f}")
+        print(f"Inventario del producto terminado:\t {inv_final_productosTerminados:.2f}")
+        print(f"Total de Activo Circulante:\t\t\t\t {total_ActivoCirculante_2016:.2f}")
+        print("")
+        print(f"Terreno:\t\t\t\t {terreno_2015:.2f}")
+        print(f"Planta y Equipo:\t\t\t {planta_equipo_2016:.2f}")
+        print(f"Depreciacion Acumulada:\t\t\t {depreciacionAcum_2016:.2f}")
+        print(f"Total de Activo No Circulante:\t\t\t\t {total_ActivoNoCirculante_2016:.2f}")
+        print("")
+        print(f"ACTIVO TOTAL:\t\t\t\t\t\t {activoTotal_2016:.2f}")
+        print("")
+        print("PASIVOS")
+        print("")
+        print(f"Proveedores:\t\t\t\t {proveedores_2016:.2f}")
+        print(f"Documento por pagar:\t\t\t {documentosxpagar_2015:.2f}")
+        print(f"ISR por pagar:\t\t\t\t {ISR_2016:.2f}")
+        print(f"PTU por pagar:\t\t\t\t{PTU_2016:.2f}")
+        print(f"Total de Pasivo Corto Plazo:\t\t\t\t {total_pasivo_CP_2016:.2f}")
+        print("")
+        print(f"Prestamos Bancarios:\t\t\t {prestamos_bancarios_2015}")
+        print(f"Total Pasivo Largo Plazo:\t\t\t\t {total_pasivo_LP_2015}")
+        print("")
+        print(f"PASIVO TOTAL:\t\t\t\t\t\t {pasivoTotal_2016:.2f}")
+        print("")
+        print("CAPITAL CONTABLE")
+        print("")
+        print(f"Capital Contribuido:\t\t\t {capitalContribuido_2015:.2f}")
+        print(f"Capital Ganado:\t\t\t\t {capitalGanado_2015:.2f}")
+        print(f"Utilidad del ejercicio:\t\t\t{utilidadNeta:.2f}")
+        print(f"Capital Contable Total:\t\t\t\t\t {totalCapitalContable:.2f}")
+        print("")
+        print(f"SUMA DEL PASIVO Y CAPITAL:\t\t\t\t {pasivoCapital:.2f}")
+
+    if opcion=="5":
+        break
